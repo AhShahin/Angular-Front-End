@@ -1,0 +1,30 @@
+<div class="row" style="margin-bottom:2em">
+  <div class="col-xs-12">
+    <!-- pager -->
+    <div class="text-center">
+      <ul class="pagination" *ngIf="users$ | async as users">
+        <li [ngClass]="{disabled:users.current_page === 1}">
+          <a (click)="navByUrl(users.prev_page_url)"><</a>
+        </li>
+        <li [ngClass]="{active:users.current_page === 1}">
+          <a (click)="navByUrl(users.first_page_url)">1</a>
+        </li>
+        <li class="disabled" [ngClass]="{hidden:users.current_page === 1 || users.current_page === users.last_page}">
+          <a>...</a>
+        </li>
+        <li [ngClass]="{active:users.current_page >= 1,hidden:users.current_page === 1 || users.current_page === users.last_page}">
+          <a>{{users.current_page}}</a>
+        </li>
+        <li class="disabled">
+          <a>...</a>
+        </li>
+        <li [ngClass]="{active:users.current_page === users.last_page}">
+          <a (click)="navByUrl(users.last_page_url)">{{users.last_page}}</a>
+        </li>
+        <li [ngClass]="{disabled:users.current_page === users.last_page}">
+          <a (click)="navByUrl(users.next_page_url)">></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {background-color: white}
+
+.page {
+  margin-top:30px;
+  min-height:425px;
+  margin-bottom:13px;
+}
+
+.btn-primary {
+  background-color: #2797de !important;
+  border-color: #2797de !important;
+  border-radius: 0 !important;
+}
+
+ thead {
+  background-color: #535353;
+  border-color: #535353;
+}
+
+.navbar-center li a {
+  color: #535353;
+}
+
+.active {
+  color: #2797de;
+}
+

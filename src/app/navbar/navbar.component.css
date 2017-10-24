@@ -1,0 +1,41 @@
+.navbar-center
+{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 30%;
+  text-align: center;
+  overflow: visible;
+  height: 0;
+  font-weight: bold;
+}
+
+.navbar-center li:after {
+  content: "|";
+  font-size: 18px;
+  font-weight: 100;
+  opacity: 0.3;
+  padding-left: 0.6em;
+}
+.navbar-center li:last-child:after {
+  content: "";
+}
+
+.navbar{
+  margin-bottom:0;
+  background-color: white;
+}
+
+.navbar-default {
+  border: none;
+}
+
+.list-inline>li {
+  display: inline;
+}
+
+.active {
+  color: #2797de;
+  text-decoration: none;
+}
+

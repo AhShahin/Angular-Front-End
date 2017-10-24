@@ -1,0 +1,53 @@
+#wrapper {
+  background-color: white;
+  padding: 20px 20px 0 20px;
+}
+
+div p {
+  margin-bottom: 20px;
+}
+div p span{
+  margin-right: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#name {
+  margin-left: 50px;
+}
+#province {
+  margin-left: 33px;
+}
+#telephone {
+  margin-left: 23px;
+}
+#postal{
+  margin-left: 15px;
+}
+#salary{
+  margin-left: 49px;
+}
+
+@media (min-width: 1201px) {
+  #btn-responsive {
+    width:585px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  #btn-responsive {
+    width:485px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  #btn-responsive {
+    padding:15px;
+    font-size:80%;
+    line-height: 1;
+    width:620px;
+  }
+}
+
+
+

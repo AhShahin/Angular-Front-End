@@ -1,0 +1,46 @@
+<div class="row" style="margin-top:30px;">
+  <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 text-center" style="padding:0;">
+    <button routerLink="/usersList" class="btn btn-primary" id="btn-responsive">
+      Your data is saved. Go to listing page to see.
+    </button>
+  </div>
+</div>
+<div class="row" style="margin-top:30px;">
+  <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" id="wrapper">
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Name<span id="name">  :  </span>{{userRegistered.name}}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Province<span id="province">  :  </span> {{userRegistered.province.name}}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Telephone<span id="telephone">  :  </span> {{userRegistered.telephone}}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Postal code<span id="postal">  :  </span> {{userRegistered.postal_code}}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Salary<span id="salary">  :  </span> {{userRegistered.salary}}
+          </p>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+
+  <div class="row page" *ngIf="!registeredUser">
+    <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" style="background-color:white;padding:20px">
+      <form (ngSubmit)="save(regForm)" #regForm="ngForm" novalidate>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="name">NAME<span>*</span></label>
+              <input type="text" required minlength="2" class="form-control" placeholder="" id="name"
+                     name="name" #name="ngModel" [(ngModel)]="user.name">
+
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors.required">
+                  <p>Name is required.</p>
+                </div>
+                <div *ngIf="name.errors.minlength">
+                  Name must be at least 2 characters long.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="province">PROVINCE<span>*</span></label>
+              <select class="form-control" id="province" (change)="onChange($event.target.value)" name="province_id" required #province="ngModel" [(ngModel)]="user.province_id">
+                <option *ngFor="let province of provinces"  [value]="province.id">{{province.name}}</option>
+              </select>
+              <div *ngIf="province.invalid && (province.dirty || province.touched)" class="alert alert-danger">
+                <div *ngIf="province.errors.required">
+                  <p>Province is required.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="telephone">TELEPHONE<span>*</span></label>
+              <input type="text" required pattern="^\(\d{3}\) \d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}" class="form-control" placeholder="" id="telephone" name="telephone" #telephone="ngModel" [(ngModel)]="user.telephone">
+              <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="alert alert-danger">
+                <div *ngIf="telephone.errors.required">
+                  <p>Telephone is required.</p>
+                </div>
+                <div *ngIf="telephone.errors.pattern">
+                  <p>Phone number format must be either (xxx) xxx-xxxx or xxx-xxx-xxxx</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="zipcode">POSTAL CODE<span>*</span></label>
+              <input type="text" required pattern="^[A-Za-z]\d[A-Za-z][ ]?\d[A-Za-z]\d$" class="form-control" placeholder="" id="zipcode" name="postal_code" #zipcode="ngModel" [(ngModel)]="user.postal_code">
+              <div *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)" class="alert alert-danger">
+                <div *ngIf="zipcode.errors.required">
+                  <p>Postal Code is required.</p>
+                </div>
+                <div *ngIf="zipcode.errors.pattern">
+                  <p>Postal Code format should be either H7H3J2 or H7H3J2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="salary">SALARY<span>*</span></label>
+              <input type="text" class="form-control" required id="salary" placeholder="" (keyup)="validateSalary(regForm)"
+                     name="salary" #salary="ngModel" [(ngModel)]="user.salary">
+              <div *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="alert alert-danger">
+                <div *ngIf="salary.errors.required">
+                  <p>Salary is required.</p>
+                </div>
+                <div *ngIf="setProvncErrMsg$ | async">
+                  <p>Please select a province first.</p>
+                </div>
+                <div *ngIf="setQcErrMsg$ | async">
+                  <p>Acceptable format 40 000,00 | 40 000</p>
+                </div>
+                <div *ngIf="setFedErrMsg$ | async">
+                  <p>Acceptable format 40,000.00 | 40000 | 40000.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" [disabled]="!regForm.valid" class="btn btn-primary pull-right padding">SAVE</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="registeredUser">
+    <app-confirmation-page [userRegistered]="registeredUser"></app-confirmation-page>
+  </div>
+

@@ -1,0 +1,39 @@
+
+  <div class="row page" *ngIf="!registeredUser">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <div class="table-responsive">
+            <table class="table" style="margin-top:0;" *ngIf="users$ | async as users">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Province</th>
+                <th>Telephone</th>
+                <th>Postal code</th>
+                <th>Salary</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let user of users.data">
+                <td>{{user.name}}
+                </td>
+                <td>{{user.province.name}}
+                </td>
+                <td>{{user.telephone}}
+                </td>
+                <td>{{user.postal_code}}
+                </td>
+                <td>{{user.salary}}
+                </td>
+                <td style="width:112px">
+                  <input type="button" value="Edit" class="myButton myButtonEdit" (click)="editUserPage(user)">
+                  <input type="button" value="Delete" class="myButton myButtonDelete" (click)="deleteUser(user)">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </div>
+  <app-pagination></app-pagination>
+

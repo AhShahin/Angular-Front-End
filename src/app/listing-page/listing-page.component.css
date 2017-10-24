@@ -1,0 +1,95 @@
+.table-responsive {
+  margin-bottom:0;
+  background-color:white;
+}
+.myButton {
+  border-radius:3px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial sans-serif;
+  font-size:13px;
+  text-decoration:none;
+}
+thead {
+  color:white;
+}
+.myButtonDelete:hover {
+  background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#d0451b',GradientType=0);
+  background-color:#bc3315;
+}
+
+.myButtonDelete{
+  box-shadow:inset 0 1px 0 0 #cf866c;
+  background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0451b', endColorstr='#bc3315',GradientType=0);
+  background-color:#d0451b;
+  border:1px solid #942911;
+  text-shadow:0 1px 0 #854629;
+  padding:3px 4px;
+}
+
+.myButtonEdit {
+  box-shadow:inset 0 1px 0 0 #9fb4f2;
+  background:linear-gradient(to bottom, #446cb0 5%, #476e9e 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#446cb0', endColorstr='#476e9e',GradientType=0);
+  background-color:#446cb0;
+  border:1px solid #4e6096;
+  text-shadow:0 1px 0 #283966;
+  padding: 3px 9px;
+  margin-right: 4px;
+}
+.myButtonEdit:hover {
+  background:linear-gradient(to bottom, #476e9e 5%, #446cb0 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#446cb0',GradientType=0);
+  background-color:#476e9e;
+}
+
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+.buttonSort {
+  box-shadow:inset 0 -3px 7px 0 #29bbff;
+  background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+  background-color:#2dabf9;
+  border:1px solid #0b0e07;
+  font-size:15px;
+  padding:2px 4px;
+  text-shadow:0 1px 0 #263666;
+}
+.buttonSort:hover {
+  background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+  background-color:#0688fa;
+}
+
+i {
+  position: relative;
+  top: 6px;
+  float: right;
+  font-size: 16px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+td input[type=text] {
+  width: 10em;
+}
+
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) and (max-width: 768px){
+  .container {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+
+

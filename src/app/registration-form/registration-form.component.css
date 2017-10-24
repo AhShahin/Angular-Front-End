@@ -1,0 +1,22 @@
+.form-control {
+  height: 45px;
+  border-radius: 0;
+}
+
+label span {
+  color: red;
+}
+
+.padding {
+  padding: 14px 44px;
+  font-size: 12px;
+  border-radius: 0;
+}
+
+.alert {
+  padding: 5px;
+}
+
+.alert p {
+  margin: 0 0 1px;
+}
